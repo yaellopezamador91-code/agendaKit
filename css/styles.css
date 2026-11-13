@@ -1,0 +1,167 @@
+:root {
+  --bg-color: #FDF2F8;
+  --primary-purple: #ffa0db;
+  --dark-purple: #ff9ff7;
+  --soft-pink: #FBCFE8;
+  --accent-pink: #F472B6;
+  --card-bg: #FFFFFF;
+  --text-main: #374151;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  padding-bottom: 80px;
+}
+
+.app-header {
+  background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.app-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.date-picker-card {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(126, 34, 206, 0.08);
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.date-picker-card label {
+  font-weight: 600;
+  color: var(--primary-purple);
+}
+
+input[type="date"], input[type="time"], input[type="text"], textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--soft-pink);
+  border-radius: 8px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary-purple);
+}
+
+.block h2 {
+  font-size: 1.1rem;
+  color: var(--dark-purple);
+  margin-bottom: 0.8rem;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.item-card {
+  background: var(--card-bg);
+  border-left: 5px solid var(--primary-purple);
+  padding: 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.item-card.nota {
+  border-left-color: var(--accent-pink);
+}
+
+.item-card .time {
+  font-size: 0.85rem;
+  color: var(--primary-purple);
+  font-weight: 600;
+}
+
+.placeholder-text {
+  font-size: 0.9rem;
+  color: #9CA3AF;
+  font-style: italic;
+}
+
+/* Botón Flotante (FAB) */
+.fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary-purple);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  box-shadow: 0 4px 10px rgba(126, 34, 206, 0.4);
+  cursor: pointer;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.hidden { display: none; }
+
+.modal-content {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.3rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.btn-submit {
+  width: 100%;
+  background: var(--primary-purple);
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
