@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda Digital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Fuentes e Íconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>📅 Agenda Digital</h1>
+  </header>
+
+  <main class="app-container">
+    
+    <!-- Selector de Fecha -->
+    <section class="date-picker-card">
+      <label for="fechaSeleccionada">Ver agenda del día:</label>
+      <input type="date" id="fechaSeleccionada">
+    </section>
+
+    <!-- Lista de Actividades y Notas -->
+    <section class="day-view">
+      
+      <div class="block">
+        <h2>⏰ Actividades Programadas</h2>
+        <div id="listaActividades" class="card-list">
+          <p class="placeholder-text">Cargando actividades...</p>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>📝 Notas y Pendientes</h2>
+        <div id="listaNotas" class="card-list">
+          <p class="placeholder-text">Cargando notas...</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Botón Flotante para Agregar -->
+  <button id="btnAbrirModal" class="fab">+</button>
+
+  <!-- Modal Formulario de Registro -->
+  <div id="modalForm" class="modal hidden">
+    <div class="modal-content">
+      <span id="btnCerrarModal" class="close-btn">&times;</span>
+      <h3>Nuevo Registro</h3>
+      
+      <form id="registroForm">
+        <div class="form-group">
+          <label>Tipo de Registro:</label>
+          <div class="radio-group">
+            <label><input type="radio" name="tipo" value="Actividad" checked> Actividad</label>
+            <label><input type="radio" name="tipo" value="Nota"> Nota / Tarea</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="titulo">Título / Asunto:</label>
+          <input type="text" id="titulo" required placeholder="Ej. Cita médica / Comprar despensa">
+        </div>
+
+        <div class="form-group">
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" required>
+        </div>
+
+        <div class="form-group" id="grupoHora">
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora">
+        </div>
+
+        <div class="form-group">
+          <label for="detalle">Detalle / Categoría (Opcional):</label>
+          <textarea id="detalle" rows="2" placeholder="Detalles adicionales..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit" id="btnGuardar">Guardar en Google Sheets</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
